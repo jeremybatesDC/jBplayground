@@ -1,0 +1,1 @@
+console.log('unless you have a good reason, your js should go in the components folder, not here ');

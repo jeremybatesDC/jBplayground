@@ -1,0 +1,75 @@
+{{#> ../templates/generic_page_template
+	title="Pattern Library"
+}}
+
+<style>
+xmp {
+	background: #ddd;
+	font-family: monospace;
+	font-size:12px; 
+}
+
+</style>
+
+	<h1>{{title}}</h1>
+
+	<section id="accordionPattern" class="patternLib__section">
+		{{> ../../components/accordion/accordion
+			accordHeadline1="Accordion Headline"
+			accordText1="Accordion Text"
+		}}
+		<xmp>
+		{{> ../../components/accordion/accordion
+			accordHeadline1="Accordion Headline"
+			accordText1="Accordion Text"
+		}}
+		</xmp>
+	</section>
+
+	<section id="tabsPattern" class="patternLib__section">
+		{{> ../../components/tabs/tabs}}
+	</section>
+
+<script>
+
+function patternLibInit(){
+	//for demo purposes
+	var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
+	var trueArrayOfTheSections = Array.prototype.slice.call(nodeListOftheSections);
+	
+	trueArrayOfTheSections.map(function(theSection){
+		patternLibFunction(theSection);
+	});
+}
+
+function patternLibFunction(theSection){
+
+	//there is a type error in here somewhere
+
+	var cloneOfTheSection = theSection.cloneNode('deep');
+
+	console.log(cloneOfTheSection);
+
+	//trying to put the clone inside stuff
+	var templateElement = document.createElement('code');
+
+	//need to be confortable manipulaitng this object
+
+	templateElement.innerHTML = '<pre>' + cloneOfTheSection.children[0] + '</pre>' ;
+
+
+
+	theSection.appendChild(templateElement);
+
+
+}
+
+//document.addEventListener('DOMContentLoaded', patternLibInit)
+
+</script>
+
+
+
+{{/../templates/generic_page_template}}
+
+<!--A common script needs to copy the code and put it inside that tag

@@ -1,0 +1,22 @@
+{{#> ../templates/generic_page_template
+	title="Project Page"
+	subTitle="list of links"
+	imageName="testImage.png"
+}}
+
+	<h1>{{title}}</h1>
+	<h2>{{subTitle}}</h2>
+	
+	
+	<ul>
+		<li><a href="homepage.html">Homepage</a></li>
+		<li><a href="compiled_1.html">Page 1</a></li>
+		<li><a href="compiled_2.html">Page 2</a></li>
+		<li><a href="_patternLibrary_compiled.html">Pattern Library</a></li>
+	</ul>
+
+	<img class="b-lazy" data-src="img/contentImg/{{imageName}}" alt="required alt text"/>
+
+	
+	
+{{/../templates/generic_page_template}}

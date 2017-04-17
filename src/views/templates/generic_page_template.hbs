@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+{{> ../../components/docHead/docHead}}
+
+<body>
+	
+	{{> ../../components/svgDefs/svgDefs}}
+	
+	<!-- SKIP NAV -->
+	<div id="skiplink" class="sr-only">
+		<a href="#main">skip to page content</a>
+	</div>
+
+	{{> ../../components/navMain/navMain}}
+
+
+	
+<!-- page content here-->
+<main id="main">
+	{{> @partial-block }}
+</main>
+<!--end page content -->
+
+
+
+	{{> ../../components/footer/footer}}
+
+	<!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
+	<!--avoid jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	
+	<!-- Vue.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+
+</body>
+
+</html>
