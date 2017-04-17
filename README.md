@@ -1,4 +1,4 @@
-![Brightfind](http://jeremy.brightfind.com/appSeedBannerImage.png)
+![Brightfind](http://jeremy.brightfind.com/appSeedBannerImage1.png)
 
 # Frontend Base Project
 > from-scratch **Webpack 2** app
