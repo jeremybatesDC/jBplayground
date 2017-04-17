@@ -16,6 +16,7 @@
 - **Webpack Dev Server**: *for seeing instant updates while developing*
 - **Production Script**: *for shipping svelte sites*
 - **Deploy Script** *under development*
+- **Yarn** *because*
 
 ### Javascript
 - **Babel**: *so you can write that sweet, sweet ES6*
@@ -44,21 +45,19 @@
 
 - clone github repository
 - cd into directory
-- npm install
-
 
 ```
-npm install
+yarn install
 ```
 
 ## Develop
 
 ```
-npm run dev
+yarn run dev
 ```
 
 ## Build for Prod
 
 ```
-npm run prod
+yarn run prod
 ```
