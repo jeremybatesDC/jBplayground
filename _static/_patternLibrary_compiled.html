@@ -63,7 +63,6 @@
 		padding: .25em .5em; 
 		background: #53B3E2;
 		color: #fff;
-	
 	}
 	
 	</style>
@@ -76,9 +75,6 @@
 				<section>Accordion Headline</section>
 				<section>Accordion Text</section>
 			</div>	</section>
-	
-		
-	
 	</article>
 	
 	
@@ -88,68 +84,27 @@
 				testTabTitle
 				Test Tab Content
 			</div>	</section>
-	
-	
-		
-	
 	</article>
 	
 	
 	<script>
-	
-	
-	
-	
-	function patternLibInit(){
+	function patternLibFunction(){
 		//for demo purposes
 		var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
 		
-	
-		// var trueArrayOfTheSections = Array.prototype.slice.call(nodeListOftheSections);
-		// trueArrayOfTheSections.map(function(theSection){
-		// 	patternLibFunction(theSection);
-		// });
-	
-		for (let i=0; i < nodeListOftheSections.length; i++){
-	
-			//let wrappedInnerHTMLofSection = '<pre><code>' + nodeListOftheSections[i].innerHTML + '</code></pre>';
+		for(let i=0; i < nodeListOftheSections.length; i++){
 	
 			let elementToAdd = document.createElement('div');
-			//put code inside pre, then reference and fill it
 			elementToAdd.classList.add('patternLib__codeBlock');
 			let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-			let wrappedCleanHTML = '<pre><code>' + cleanedInnerHTMLOfTheSection + '</code></pre>'
+			let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
 	
 			elementToAdd.innerHTML = wrappedCleanHTML;
 			nodeListOftheSections[i].appendChild(elementToAdd);
 		}
-	
-	
-		// var patternX = document.getElementById('accordionPattern');
-		// var patternXinnerHTML = patternX.innerHTML;
-		// var patternBox = document.getElementById('patternBox')
-	
-		// patternBox.innerHTML = patternXinnerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-	
-	
-	
-	
 	}
 	
-	function patternLibFunction(theSection){
-		//there is a type error in here somewhere
-		// var cloneOfTheSection = theSection.cloneNode('deep');
-		// var cloneOfTheSectionString = cloneOfTheSection.toString();
-		// var cleanedClone = cloneOfTheSectionString.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-		// console.log(cleanedClone);
-		// //trying to put the clone inside stuff
-		// var templateElement = document.createElement('code');
-		// //need to be confortable manipulaitng this object
-		// templateElement.innerHTML = '<pre>' + cloneOfTheSection.children[0] + '</pre>' ;
-		// theSection.appendChild(templateElement);
-	}
-	
-	document.addEventListener('DOMContentLoaded', patternLibInit)
+	document.addEventListener('DOMContentLoaded', patternLibFunction)
 	
 	</script>
 	

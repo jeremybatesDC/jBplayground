@@ -16,7 +16,7 @@
 - **Webpack Dev Server**: *for seeing instant updates while developing*
 - **Production Script**: *for shipping svelte sites*
 - **Deploy Script** *under development*
-- **Yarn** *because*
+- **Yarn** *because cats*
 
 ### Javascript
 - **Babel**: *so you can write that sweet, sweet ES6*
@@ -33,6 +33,7 @@
 ### Templating
 - **WebpackHTMLPlugin**: *creates static pages*
 - **Handlebars**: *for templates & inludes (minimize frontend templating logic)*
+- **Pattern Library** *via custom awesomeness*
 
 ### Images
 - **Lazyloading** *baked-in w/ B-LAZY*
