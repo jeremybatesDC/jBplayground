@@ -42,10 +42,13 @@
 		font-size:12px;
 		width: 100%;
 		white-space: pre-wrap;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding:1rem;
 		border-top:2px solid rgba(0,0,0,.1);
 		border-bottom:2px solid rgba(0,0,0,.1);
+	}
+	
+	.patternLib__section {
+		padding-bottom: 2em;
 	}
 	
 	.patternLib__codeBlock {
@@ -67,20 +70,38 @@
 	
 	</style>
 	
-	<h1>Pattern Library</h1>
+	<br>
+	<br>
 	
-	<section id="accordionPattern" class="patternLib__section">
-		<div class="bfAccordion__outermost">
-			<section>Accordion Headline</section>
-			<section>Accordion Text</section>
-		</div></section>
+	<header>
+		<h1>Pattern Library</h1>
+	</header>
 	
-	<section id="tabsPattern" class="patternLib__section">
-		<div>
-			testTabTitle
-			Test Tab Content
-		</div></section>
+	<br>
+	<br>
+	<br>
 	
+	<article>
+		<section id="accordionPattern" class="patternLib__section">
+	
+			<h2>Accordion</h2>
+	
+			<div class="bfAccordion__outermost">
+				<section>Accordion Headline</section>
+				<section>Accordion Text</section>
+			</div>	</section>
+	
+		<section id="tabsPattern" class="patternLib__section">
+	
+			<h2>Tabs</h2>
+	
+			<div>
+				testTabTitle
+				Test Tab Content
+			</div>	</section>
+	
+		
+	</article>
 	
 	<script>
 	function patternLibFunction(){
