@@ -35,68 +35,119 @@
 <main id="main">
 	
 	<style>
-	xmp {
-		background: #ddd;
+	pre {
+		background: #555;
 		font-family: monospace;
-		font-size:12px; 
+		color:#ddd;
+		font-size:12px;
+		width: 100%;
+		white-space: pre-wrap;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	
+	.patternLib__codeBlock {
+		position: relative;
+	}
+	
+	.patternLib__codeBlock:before {
+		content: 'html';
+		display: inline-block;
+		font-family: monospace;
+		font-size: 14px;
+		position: absolute;
+		top: 0;
+		left: 1rem;
+		padding: .25em .5em; 
+		background: #53B3E2;
+		color: #fff;
+	
 	}
 	
 	</style>
 	
-		<h1>Pattern Library</h1>
+	<h1>Pattern Library</h1>
 	
+	<article>
 		<section id="accordionPattern" class="patternLib__section">
 			<div class="bfAccordion__outermost">
 				<section>Accordion Headline</section>
 				<section>Accordion Text</section>
-			</div>		<xmp>
-			<div class="bfAccordion__outermost">
-				<section>Accordion Headline</section>
-				<section>Accordion Text</section>
-			</div>		</xmp>
-		</section>
-	
-		<section id="tabsPattern" class="patternLib__section">
-			<div>
-				
-				
 			</div>	</section>
 	
+		
+	
+	</article>
+	
+	
+	<article>
+		<section id="tabsPattern" class="patternLib__section">
+			<div>
+				testTabTitle
+				Test Tab Content
+			</div>	</section>
+	
+	
+		
+	
+	</article>
+	
+	
 	<script>
+	
+	
+	
 	
 	function patternLibInit(){
 		//for demo purposes
 		var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
-		var trueArrayOfTheSections = Array.prototype.slice.call(nodeListOftheSections);
 		
-		trueArrayOfTheSections.map(function(theSection){
-			patternLibFunction(theSection);
-		});
+	
+		// var trueArrayOfTheSections = Array.prototype.slice.call(nodeListOftheSections);
+		// trueArrayOfTheSections.map(function(theSection){
+		// 	patternLibFunction(theSection);
+		// });
+	
+		for (let i=0; i < nodeListOftheSections.length; i++){
+	
+			//let wrappedInnerHTMLofSection = '<pre><code>' + nodeListOftheSections[i].innerHTML + '</code></pre>';
+	
+			let elementToAdd = document.createElement('div');
+			//put code inside pre, then reference and fill it
+			elementToAdd.classList.add('patternLib__codeBlock');
+			let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+			let wrappedCleanHTML = '<pre><code>' + cleanedInnerHTMLOfTheSection + '</code></pre>'
+	
+			elementToAdd.innerHTML = wrappedCleanHTML;
+			nodeListOftheSections[i].appendChild(elementToAdd);
+		}
+	
+	
+		// var patternX = document.getElementById('accordionPattern');
+		// var patternXinnerHTML = patternX.innerHTML;
+		// var patternBox = document.getElementById('patternBox')
+	
+		// patternBox.innerHTML = patternXinnerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+	
+	
+	
+	
 	}
 	
 	function patternLibFunction(theSection){
-	
 		//there is a type error in here somewhere
-	
-		var cloneOfTheSection = theSection.cloneNode('deep');
-	
-		console.log(cloneOfTheSection);
-	
-		//trying to put the clone inside stuff
-		var templateElement = document.createElement('code');
-	
-		//need to be confortable manipulaitng this object
-	
-		templateElement.innerHTML = '<pre>' + cloneOfTheSection.children[0] + '</pre>' ;
-	
-	
-	
-		theSection.appendChild(templateElement);
-	
-	
+		// var cloneOfTheSection = theSection.cloneNode('deep');
+		// var cloneOfTheSectionString = cloneOfTheSection.toString();
+		// var cleanedClone = cloneOfTheSectionString.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+		// console.log(cleanedClone);
+		// //trying to put the clone inside stuff
+		// var templateElement = document.createElement('code');
+		// //need to be confortable manipulaitng this object
+		// templateElement.innerHTML = '<pre>' + cloneOfTheSection.children[0] + '</pre>' ;
+		// theSection.appendChild(templateElement);
 	}
 	
-	//document.addEventListener('DOMContentLoaded', patternLibInit)
+	document.addEventListener('DOMContentLoaded', patternLibInit)
 	
 	</script>
 	
