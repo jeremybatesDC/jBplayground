@@ -34,17 +34,26 @@
 <!-- page content here-->
 <main id="main">
 	
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+	
 	<style>
 	pre {
 		background: #ddd;
-		font-family: monospace;
+		
 		color:#000;
 		font-size:12px;
+		font-weight: 500;
+		line-height: 1.5;
 		width: 100%;
 		white-space: pre-wrap;
-		padding:1rem;
+		padding:0 0 1rem 0;
 		border-top:2px solid rgba(0,0,0,.1);
 		border-bottom:2px solid rgba(0,0,0,.1);
+	}
+	
+	code {
+		display: block;
+		font-family: 'PT Mono', monospace;
 	}
 	
 	.patternLib__section {
@@ -56,16 +65,17 @@
 	}
 	
 	.patternLib__codeBlock:before {
-		content: 'html';
+		content: '<html>';
 		display: inline-block;
 		font-family: monospace;
 		font-size: 14px;
 		position: absolute;
 		top: 0;
-		left: 1rem;
+		right: 1rem;
 		padding: .25em .5em; 
 		background: #53B3E2;
 		color: #fff;
+	
 	}
 	
 	</style>
@@ -100,7 +110,7 @@
 				Test Tab Content
 			</div>	</section>
 	
-		
+	
 	</article>
 	
 	<script>
