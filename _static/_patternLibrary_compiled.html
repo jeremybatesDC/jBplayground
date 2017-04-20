@@ -34,18 +34,30 @@
 <!-- page content here-->
 <main id="main">
 	
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+	
 	<style>
 	pre {
 		background: #ddd;
-		font-family: monospace;
+		
 		color:#000;
 		font-size:12px;
+		font-weight: 500;
+		line-height: 1.5;
 		width: 100%;
 		white-space: pre-wrap;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding:0 0 1rem 0;
 		border-top:2px solid rgba(0,0,0,.1);
 		border-bottom:2px solid rgba(0,0,0,.1);
+	}
+	
+	code {
+		display: block;
+		font-family: 'PT Mono', monospace;
+	}
+	
+	.patternLib__section {
+		padding-bottom: 2em;
 	}
 	
 	.patternLib__codeBlock {
@@ -53,34 +65,53 @@
 	}
 	
 	.patternLib__codeBlock:before {
-		content: 'html';
+		content: '<html>';
 		display: inline-block;
 		font-family: monospace;
 		font-size: 14px;
 		position: absolute;
 		top: 0;
-		left: 1rem;
+		right: 1rem;
 		padding: .25em .5em; 
 		background: #53B3E2;
 		color: #fff;
+	
 	}
 	
 	</style>
 	
-	<h1>Pattern Library</h1>
+	<br>
+	<br>
 	
-	<section id="accordionPattern" class="patternLib__section">
-		<div class="bfAccordion__outermost">
-			<section>Accordion Headline</section>
-			<section>Accordion Text</section>
-		</div></section>
+	<header>
+		<h1>Pattern Library</h1>
+	</header>
 	
-	<section id="tabsPattern" class="patternLib__section">
-		<div>
-			testTabTitle
-			Test Tab Content
-		</div></section>
+	<br>
+	<br>
+	<br>
 	
+	<article>
+		<section id="accordionPattern" class="patternLib__section">
+	
+			<h2>Accordion</h2>
+	
+			<div class="bfAccordion__outermost">
+				<section>Accordion Headline</section>
+				<section>Accordion Text</section>
+			</div>	</section>
+	
+		<section id="tabsPattern" class="patternLib__section">
+	
+			<h2>Tabs</h2>
+	
+			<div>
+				testTabTitle
+				Test Tab Content
+			</div>	</section>
+	
+	
+	</article>
 	
 	<script>
 	function patternLibFunction(){
