@@ -92,24 +92,19 @@
 	<br>
 	
 	<article>
-		<section id="accordionPattern" class="patternLib__section">
 	
-			<h2>Accordion</h2>
-	
-			<div class="bfAccordion__outermost">
-				<section>Accordion Headline</section>
-				<section>Accordion Text</section>
-			</div>	</section>
-	
-		<section id="tabsPattern" class="patternLib__section">
-	
-			<h2>Tabs</h2>
-	
-			<div>
-				testTabTitle
-				Test Tab Content
-			</div>	</section>
-	
+	<section id="accordionPattern" class="patternLib__section">
+		<h2>Accordion</h2>
+		<div class="bfAccordion__outermost">
+			<section>Accordion Headline</section>
+			<section>Accordion Text</section>
+		</div></section>
+	<section id="tabsPattern" class="patternLib__section">
+		<h2>Tabs</h2>
+		<div>
+			testTabTitle
+			Test Tab Content
+		</div></section>
 	
 	</article>
 	
@@ -117,14 +112,11 @@
 	function patternLibFunction(){
 		//for demo purposes
 		var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
-		
 		for(let i=0; i < nodeListOftheSections.length; i++){
-	
 			let elementToAdd = document.createElement('div');
 			elementToAdd.classList.add('patternLib__codeBlock');
 			let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 			let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
-	
 			elementToAdd.innerHTML = wrappedCleanHTML;
 			nodeListOftheSections[i].appendChild(elementToAdd);
 		}

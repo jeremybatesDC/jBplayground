@@ -60,26 +60,21 @@ code {
 <br>
 
 <article>
-	<section id="accordionPattern" class="patternLib__section">
 
-		<h2>Accordion</h2>
-
-		{{> ../../components/accordion/accordion
-			accordHeadline1="Accordion Headline"
-			accordText1="Accordion Text"
-		}}
-	</section>
-
-	<section id="tabsPattern" class="patternLib__section">
-
-		<h2>Tabs</h2>
-
-		{{> ../../components/tabs/tabs
-			tabTitle1="testTabTitle"
-			tabText1="Test Tab Content"
-		}}
-	</section>
-
+<section id="accordionPattern" class="patternLib__section">
+	<h2>Accordion</h2>
+	{{> ../../components/accordion/accordion
+		accordHeadline1="Accordion Headline"
+		accordText1="Accordion Text"
+	}}
+</section>
+<section id="tabsPattern" class="patternLib__section">
+	<h2>Tabs</h2>
+	{{> ../../components/tabs/tabs
+		tabTitle1="testTabTitle"
+		tabText1="Test Tab Content"
+	}}
+</section>
 
 </article>
 
@@ -87,14 +82,11 @@ code {
 function patternLibFunction(){
 	//for demo purposes
 	var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
-	
 	for(let i=0; i < nodeListOftheSections.length; i++){
-
 		let elementToAdd = document.createElement('div');
 		elementToAdd.classList.add('patternLib__codeBlock');
 		let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 		let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
-
 		elementToAdd.innerHTML = wrappedCleanHTML;
 		nodeListOftheSections[i].appendChild(elementToAdd);
 	}
