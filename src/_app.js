@@ -1,4 +1,4 @@
-require('./core/_js_global/utilLib/blazyInit');
+require('./core/_js_core/utilLib/blazyInit');
 
 require('./components/accordion/accordion.js');
 require('./components/tabs/tabs.js');
