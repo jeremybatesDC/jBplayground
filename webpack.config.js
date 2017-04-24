@@ -51,6 +51,10 @@ var config = {
       new HtmlWebpackPlugin({
         filename: '_patternLibrary_compiled.html'
         ,template: 'src/views/pages/_patternLibrary.hbs'
+      }),
+      new HtmlWebpackPlugin({
+        filename: '_patternLib_precompiled.html'
+        ,template: 'src/views/pages/_patternLib_precompiled.hbs'
       })
    ]
 };

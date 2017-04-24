@@ -5,7 +5,7 @@
     "dev": "NODE_ENV=development node_modules/.bin/webpack --hide-modules & NODE_ENV=development webpack-dev-server --host 0.0.0.0 --quiet --progress & open http://localhost:8080/",
     "prod": "NODE_ENV=production node_modules/.bin/webpack --hide-modules",
     "manualKill": "pkill -f webpack & pkill -f webpack-dev-server",
-    "deploy": "node _deploy.js"
+    "patternLib": "node _patternLib.js"
   },
   "keywords": [],
   "author": "Brightfind",
