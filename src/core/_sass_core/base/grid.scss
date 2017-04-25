@@ -28,26 +28,38 @@
 	display:flex;
 	flex-flow: row wrap;
 	header {
-		//flex: 1 auto;
-		// display: flex;
 		flex-direction: row;
 		flex-basis: 100%;
-		// flex-grow:1;
 
 	}
-	.aside__left,
-	.aside__right {
-		display: flex;
-		//flex-direction: column;
-		// flex-basis: 25%;
-		// flex-grow: 1;
-	}
-	main {
-		flex-grow: 2;
-	}
+	// .aside__left,
+	// .aside__right {
+	// }
+	// main {
+	// }
 	footer {
-		//display: flex;
 		flex-direction: row;
 		flex-basis: 100%;
+	}
+	@media(max-width:767px){
+		header {order:1}
+		main {
+			flex-basis: 100%;
+			order:2
+		}
+		.aside__left {
+			flex-basis: 100%;
+			order:3
+		}
+		.aside__right {
+			flex-basis: 100%;
+			order:4
+		}
+		footer {order:5}
+	}
+	@media(min-width:768px){
+		main {
+			flex-grow: 2;
+		}
 	}
 }
