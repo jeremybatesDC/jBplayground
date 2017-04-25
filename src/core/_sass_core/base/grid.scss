@@ -1,27 +1,53 @@
 @supports (display: grid){
-	.grid__wrapper--outermost {
-		display: grid;
-		grid-template-areas: 
-    		'header header header header'
-    		'asideLeft main main asideRight'
-    		'footer footer footer footer';
+	html {
+		.grid__wrapper--outermost {
+			display: grid;
+			grid-template-areas: 
+	    		'header header header header'
+	    		'asideLeft main main asideRight'
+	    		'footer footer footer footer';
+	    	@media(max-width:767px){
+	    		grid-template-areas:
+	    			'header'
+	    			'main'
+	    			'asideLeft'
+	    			'asideRight'
+	    			'footer'
+	    	}
+		}
+		header {grid-area: header;}
+		.aside__left {grid-area: asideLeft;}
+		main {grid-area: main;}
+		.aside__right {grid-area: asideRight;}
+		footer {grid-area: footer;}
 	}
+}
 
-	main {
-		grid-area: main;
-	}
-
+//if doesNot support grid, then use flexbox fallback
+.grid__wrapper--outermost {
+	display:flex;
+	flex-flow: row wrap;
 	header {
-		grid-area: header;
+		//flex: 1 auto;
+		// display: flex;
+		flex-direction: row;
+		flex-basis: 100%;
+		// flex-grow:1;
+
+	}
+	.aside__left,
+	.aside__right {
+		display: flex;
+		//flex-direction: column;
+		// flex-basis: 25%;
+		// flex-grow: 1;
+	}
+	main {
+		flex-grow: 2;
 	}
 	footer {
-		grid-area: footer;
+		//display: flex;
+		flex-direction: row;
+		flex-basis: 100%;
 	}
-	.aside__left {
-		grid-area: asideLeft;
-	}
-	.aside__right {
-		grid-area: asideRight;
-	}
-
 }
