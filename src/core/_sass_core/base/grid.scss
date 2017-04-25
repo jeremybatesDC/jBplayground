@@ -1,6 +1,27 @@
 @supports (display: grid){
-
-	body {
+	.grid__wrapper--outermost {
 		display: grid;
+		grid-template-areas: 
+    		'header header header header'
+    		'asideLeft main main asideRight'
+    		'footer footer footer footer';
 	}
+
+	main {
+		grid-area: main;
+	}
+
+	header {
+		grid-area: header;
+	}
+	footer {
+		grid-area: footer;
+	}
+	.aside__left {
+		grid-area: asideLeft;
+	}
+	.aside__right {
+		grid-area: asideRight;
+	}
+
 }

@@ -29,41 +29,53 @@
 <nav>
 	<a href="/">Nav Home</a>
 </nav>
-<!-- <header></header> -->
-	
-<!-- page content here-->
-<main id="main">
-	
+<div class="grid__wrapper--outermost">
+
+	<header>
 		<h1>Page One</h1>
-		<h2>This Subtitle Rocks</h2>
+	</header>
 		
-		<img class="b-lazy" data-src="img/contentImg/testImage.png" alt="required alt text"/>
-	
-		<div class="b-lazy" data-src="img/bgImg/bg_cat3.jpg">
-			Background image test
-		</div>
-	
-		<div style="background-image:url(img/bgImg/bg_cat3.jpg)">
-			Background image test 2
-		</div>
-	
+	<!-- page content here-->
+	<aside class="aside__left">
+		Optional Aside Left 
+	</aside>
+	<main id="main">
 		
-		<div class="bfAccordion__outermost">
-			<section>
-				<h3>Accord 1 Headline</h3>
-		  			</section>
-			<section>
-				Accord 1 Text
-					</section>
-		</div>
+			<h2>This Subtitle Rocks</h2>
+			
+			<img class="b-lazy" data-src="img/contentImg/testImage.png" alt="required alt text"/>
+		
+			<div class="b-lazy" data-src="img/bgImg/bg_cat3.jpg">
+				Background image test
+			</div>
+		
+			<div style="background-image:url(img/bgImg/bg_cat3.jpg)">
+				Background image test 2
+			</div>
+		
+			
+			<div class="bfAccordion__outermost">
+				<section>
+					<h3>Accord 1 Headline</h3>
+			  			</section>
+				<section>
+					Accord 1 Text
+						</section>
+			</div>
+		
+	</main>
+	<aside class="aside__right">
+		Optional Aside Right
+	</aside>
+
+	<!--end page content -->
+
 	
-</main>
-<!--end page content -->
+	<footer>
+		footer
+	</footer>
 
-
-<footer>
-	footer
-</footer>
+</div>
 <!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
 <!--NO jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>

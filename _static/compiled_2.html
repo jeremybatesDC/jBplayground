@@ -29,30 +29,42 @@
 <nav>
 	<a href="/">Nav Home</a>
 </nav>
-<!-- <header></header> -->
-	
-<!-- page content here-->
-<main id="main">
-		
+<div class="grid__wrapper--outermost">
+
+	<header>
 		<h1>Page Two</h1>
-		<button>Learn More</button>
-	
-		<img class="b-lazy" data-src="img/contentImg/testImage2.png" alt="required alt text"/>
-	
-	
+	</header>
 		
-		<div class="bf__tabs">
-			<h3>testTabTitle</h3>
-			<p>Test Tab Content</p>
-		</div>	
+	<!-- page content here-->
+	<aside class="aside__left">
+		Optional Aside Left 
+	</aside>
+	<main id="main">
+			
+			<button>Learn More</button>
+		
+			<img class="b-lazy" data-src="img/contentImg/testImage2.png" alt="required alt text"/>
+		
+		
+			
+			<div class="bf__tabs">
+				<h3>testTabTitle</h3>
+				<p>Test Tab Content</p>
+			</div>	
+		
+	</main>
+	<aside class="aside__right">
+		Optional Aside Right
+	</aside>
+
+	<!--end page content -->
+
 	
-</main>
-<!--end page content -->
+	<footer>
+		footer
+	</footer>
 
-
-<footer>
-	footer
-</footer>
+</div>
 <!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
 <!--NO jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>

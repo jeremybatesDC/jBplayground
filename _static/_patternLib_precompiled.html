@@ -1,22 +1,147 @@
-<head><link href="css/style.css" rel="stylesheet"></head>
-<div class="bfAccordion__outermost">
-	<section>
-		<h3>Accordion Headline</h3>
-	</section>
-	<section>
-		<p>Accordion Text</p>
-	</section>
-</div>
-<div class="back-to-top">
-	Back to Top
-</div>
-<div class="banner">
-	Banner
-</div>
-<nav>
-	<a href="/">Nav Home</a>
-</nav>
-<div class="bf__tabs">
-	<h3>Tab Default Headline</h3>
-	<p>Tab Default Headline</p>
-</div><script type="text/javascript" src="js/app.js"></script>
+<head><link href="css/style.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve '/Users/jbateslocal/Documents/201  7/src/views/pages/_patternLib_precompiled.hbs' in '/Users/jbateslocal/Document  s/2017':
+  Error: Can't resolve '/Users/jbateslocal/Documents/2017/src/views/pages/_patte  rnLib_precompiled.hbs' in '/Users/jbateslocal/Documents/2017'
+  
+  - compiler.js:76 
+    [2017]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:291 Compiler.<anonymous>
+    [2017]/[webpack]/lib/Compiler.js:291:10
+  
+  - Compiler.js:494 
+    [2017]/[webpack]/lib/Compiler.js:494:13
+  
+  - Tapable.js:138 next
+    [2017]/[tapable]/lib/Tapable.js:138:11
+  
+  - CachePlugin.js:62 Compiler.<anonymous>
+    [2017]/[webpack]/lib/CachePlugin.js:62:5
+  
+  - Tapable.js:142 Compiler.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:142:13
+  
+  - Compiler.js:491 
+    [2017]/[webpack]/lib/Compiler.js:491:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:645 self.applyPluginsAsync.err
+    [2017]/[webpack]/lib/Compilation.js:645:19
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:636 self.applyPluginsAsync.err
+    [2017]/[webpack]/lib/Compilation.js:636:11
+  
+  - Tapable.js:138 next
+    [2017]/[tapable]/lib/Tapable.js:138:11
+  
+  - index.js:252 Compilation.<anonymous>
+    [2017]/[uglifyjs-webpack-plugin]/dist/index.js:252:6
+  
+  - Tapable.js:142 Compilation.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:142:13
+  
+  - Compilation.js:631 self.applyPluginsAsync.err
+    [2017]/[webpack]/lib/Compilation.js:631:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:627 sealPart2
+    [2017]/[webpack]/lib/Compilation.js:627:9
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:575 Compilation.seal
+    [2017]/[webpack]/lib/Compilation.js:575:8
+  
+  - Compiler.js:488 
+    [2017]/[webpack]/lib/Compiler.js:488:16
+  
+  - Tapable.js:225 
+    [2017]/[tapable]/lib/Tapable.js:225:11
+  
+  - Compilation.js:477 _addModuleChain
+    [2017]/[webpack]/lib/Compilation.js:477:11
+  
+  - Compilation.js:366 Compilation.errorAndCallback
+    [2017]/[webpack]/lib/Compilation.js:366:4
+  
+  - Compilation.js:387 moduleFactory.create
+    [2017]/[webpack]/lib/Compilation.js:387:12
+  
+  - NormalModuleFactory.js:247 factory
+    [2017]/[webpack]/lib/NormalModuleFactory.js:247:20
+  
+  - NormalModuleFactory.js:65 resolver
+    [2017]/[webpack]/lib/NormalModuleFactory.js:65:21
+  
+  - NormalModuleFactory.js:138 asyncLib.parallel.e
+    [2017]/[webpack]/lib/NormalModuleFactory.js:138:21
+  
+  - async.js:3824 
+    [2017]/[webpack]/[async]/dist/async.js:3824:9
+  
+  - async.js:460 
+    [2017]/[webpack]/[async]/dist/async.js:460:16
+  
+  - async.js:1032 iteratorCallback
+    [2017]/[webpack]/[async]/dist/async.js:1032:13
+  
+  - From previous event:
+  
+  - compiler.js:69 Object.compileTemplate
+    [2017]/[html-webpack-plugin]/lib/compiler.js:69:10
+  
+  - index.js:47 Compiler.<anonymous>
+    [2017]/[html-webpack-plugin]/index.js:47:40
+  
+  - Tapable.js:229 Compiler.applyPluginsParallel
+    [2017]/[tapable]/lib/Tapable.js:229:14
+  
+  - Compiler.js:483 
+    [2017]/[webpack]/lib/Compiler.js:483:8
+  
+  - Tapable.js:131 Compiler.applyPluginsAsyncSeries
+    [2017]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compiler.js:476 Compiler.compile
+    [2017]/[webpack]/lib/Compiler.js:476:7
+  
+  - Compiler.js:46 
+    [2017]/[webpack]/lib/Compiler.js:46:17
+  
+  - Tapable.js:138 next
+    [2017]/[tapable]/lib/Tapable.js:138:11
+  
+  - CachePlugin.js:32 Compiler.compiler.plugin
+    [2017]/[webpack]/lib/CachePlugin.js:32:5
+  
+  - Tapable.js:140 next
+    [2017]/[tapable]/lib/Tapable.js:140:14
+  
+  - index.js:45 Server.serverStarted
+    [2017]/[webpack-livereload-plugin]/index.js:45:7
+  
+  - next_tick.js:71 _combinedTickCallback
+    internal/process/next_tick.js:71:11
+  
+  - next_tick.js:98 process._tickCallback
+    internal/process/next_tick.js:98:9
+  
+  - bootstrap_node.js:394 run
+    bootstrap_node.js:394:7
+  
+  - bootstrap_node.js:149 startup
+    bootstrap_node.js:149:9
+  
+  - bootstrap_node.js:509 
+    bootstrap_node.js:509:3
+  
+</pre><script type="text/javascript" src="js/app.js"></script>

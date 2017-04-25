@@ -20,16 +20,29 @@
 
 {{> ../../components/navMain/navMain}}
 
-<!-- <header></header> -->
-	
-<!-- page content here-->
-<main id="main">
-	{{> @partial-block }}
-</main>
-<!--end page content -->
+<div class="grid__wrapper--outermost">
 
-{{> ../../core/footer/footer}}
+	<header>
+		<h1>{{title}}</h1>
+	</header>
+		
+	<!-- page content here-->
+	<aside class="aside__left">
+		Optional Aside Left 
+	</aside>
+	<main id="main">
+		{{> @partial-block }}
+	</main>
+	<aside class="aside__right">
+		Optional Aside Right
+	</aside>
 
+	<!--end page content -->
+
+	{{> ../../core/footer/footer}}
+
+
+</div>
 <!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
 <!--NO jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>

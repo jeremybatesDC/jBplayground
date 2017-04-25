@@ -29,122 +29,135 @@
 <nav>
 	<a href="/">Nav Home</a>
 </nav>
-<!-- <header></header> -->
-	
-<!-- page content here-->
-<main id="main">
-	
-	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
-	
-	<style>
-	pre {
-		background: #ddd;
-		
-		color:#000;
-		font-size:12px;
-		font-weight: 500;
-		line-height: 1.5;
-		width: 100%;
-		white-space: pre-wrap;
-		padding:0 0 1rem 0;
-		border-top:2px solid rgba(0,0,0,.1);
-		border-bottom:2px solid rgba(0,0,0,.1);
-	}
-	
-	code {
-		display: block;
-		font-family: 'PT Mono', monospace;
-	}
-	
-	.patternLib__section {
-		padding-bottom: 2em;
-	}
-	
-	.patternLib__codeBlock {
-		position: relative;
-	}
-	
-	.patternLib__codeBlock:before {
-		content: '<html>';
-		display: inline-block;
-		font-family: monospace;
-		font-size: 14px;
-		position: absolute;
-		top: 0;
-		right: 1rem;
-		padding: .25em .5em; 
-		background: #53B3E2;
-		color: #fff;
-	
-	}
-	
-	</style>
-	
-	<br>
-	<br>
-	
+<div class="grid__wrapper--outermost">
+
 	<header>
 		<h1>Pattern Library</h1>
 	</header>
-	
-	<br>
-	<br>
-	<br>
-	
-	<article>
-	
-	<section class="patternLib__section">
-	<div class="bfAccordion__outermost">
-		<section>
-			<h3>Accordion Headline</h3>
-		</section>
-		<section>
-			<p>Accordion Text</p>
-		</section>
-	</div></section><section class="patternLib__section">
-	<div class="back-to-top">
-		Back to Top
-	</div></section><section class="patternLib__section">
-	<div class="banner">
-		Banner
-	</div></section><section class="patternLib__section">
-	<nav>
-		<a href="/">Nav Home</a>
-	</nav></section><section class="patternLib__section">
-	<div class="bf__tabs">
-		<h3>Tab Default Headline</h3>
-		<p>Tab Default Headline</p>
-	</div></section>
-	
-	</article>
-	
-	<script>
-	function patternLibFunction(){
-		//for demo purposes
-		var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
-		for(let i=0; i < nodeListOftheSections.length; i++){
-			let elementToAdd = document.createElement('div');
-			elementToAdd.classList.add('patternLib__codeBlock');
-			let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-			let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
-			elementToAdd.innerHTML = wrappedCleanHTML;
-			nodeListOftheSections[i].appendChild(elementToAdd);
+		
+	<!-- page content here-->
+	<aside class="aside__left">
+		Optional Aside Left 
+	</aside>
+	<main id="main">
+		
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		
+		<style>
+		pre {
+			background: #ddd;
+			
+			color:#000;
+			font-size:12px;
+			font-weight: 500;
+			line-height: 1.5;
+			width: 100%;
+			white-space: pre-wrap;
+			padding:0 0 1rem 0;
+			border-top:2px solid rgba(0,0,0,.1);
+			border-bottom:2px solid rgba(0,0,0,.1);
 		}
-	}
-	
-	document.addEventListener('DOMContentLoaded', patternLibFunction)
-	
-	</script>
-	
-	
-	
-</main>
-<!--end page content -->
+		
+		code {
+			display: block;
+			font-family: 'PT Mono', monospace;
+		}
+		
+		.patternLib__section {
+			padding-bottom: 2em;
+		}
+		
+		.patternLib__codeBlock {
+			position: relative;
+		}
+		
+		.patternLib__codeBlock:before {
+			content: '<html>';
+			display: inline-block;
+			font-family: monospace;
+			font-size: 14px;
+			position: absolute;
+			top: 0;
+			right: 1rem;
+			padding: .25em .5em; 
+			background: #53B3E2;
+			color: #fff;
+		
+		}
+		
+		</style>
+		
+		<br>
+		<br>
+		
+		<header>
+			<h1>Pattern Library</h1>
+		</header>
+		
+		<br>
+		<br>
+		<br>
+		
+		<article>
+		
+		<section class="patternLib__section">
+		<div class="bfAccordion__outermost">
+			<section>
+				<h3>Accordion Headline</h3>
+			</section>
+			<section>
+				<p>Accordion Text</p>
+			</section>
+		</div></section><section class="patternLib__section">
+		<div class="back-to-top">
+			Back to Top
+		</div></section><section class="patternLib__section">
+		<div class="banner">
+			Banner
+		</div></section><section class="patternLib__section">
+		<nav>
+			<a href="/">Nav Home</a>
+		</nav></section><section class="patternLib__section">
+		<div class="bf__tabs">
+			<h3>Tab Default Headline</h3>
+			<p>Tab Default Headline</p>
+		</div></section>
+		
+		</article>
+		
+		<script>
+		function patternLibFunction(){
+			//for demo purposes
+			var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
+			for(let i=0; i < nodeListOftheSections.length; i++){
+				let elementToAdd = document.createElement('div');
+				elementToAdd.classList.add('patternLib__codeBlock');
+				let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+				let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
+				elementToAdd.innerHTML = wrappedCleanHTML;
+				nodeListOftheSections[i].appendChild(elementToAdd);
+			}
+		}
+		
+		document.addEventListener('DOMContentLoaded', patternLibFunction)
+		
+		</script>
+		
+		
+		
+	</main>
+	<aside class="aside__right">
+		Optional Aside Right
+	</aside>
 
+	<!--end page content -->
 
-<footer>
-	footer
-</footer>
+	
+	<footer>
+		footer
+	</footer>
+
+</div>
 <!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
 <!--NO jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
