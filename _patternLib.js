@@ -12,13 +12,17 @@ var indexOfDsStore = componentsList.indexOf('.DS_Store');
 var componentsListMinusDSstore = componentsList.slice(indexOfDsStore + 1);
 
 componentsListMinusDSstore.map(function(component){
+
 	writeThisFileName(component);
 });
 
 function writeThisFileName(component){
-	console.log(component);
+	console.log(componentsList.indexOf(component));
+	let theIDtoWrite = `patterLibSection_${componentsList.indexOf(component)}`
 	//only add to array if there is an hbs file in a folder
-	const testHTML = '<section class="patternLib__section">{{> ../../components/' + component + '/' + component + '.hbs}}</section>';
+	//const testHTML = '<section id="theIDtoWrite" class="patternLib__section">{{> ../../components/' + component + '/' + component + '.hbs}}</section><button class="copyButton" data-clipboard-action="copy" data-clipboard-target="#theIDtoWrite">Copy</button>';
+	const testHTML = `<section id="${theIDtoWrite}" class="patternLib__section">{{> ../../components/${component}/${component}.hbs}}</section>`;
+
 	ObjectOfHTMLtoWrite.push(testHTML);
 }
 

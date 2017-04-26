@@ -3,9 +3,9 @@
 		.grid__wrapper--outermost {
 			display: grid;
 			grid-template-areas: 
-	    		'header header header header'
-	    		'asideLeft main main asideRight'
-	    		'footer footer footer footer';
+	    		'header header header header header header'
+	    		'asideLeft main main main main asideRight'
+	    		'footer footer footer footer footer footer';
 	    	@media(max-width:767px){
 	    		grid-template-areas:
 	    			'header'
