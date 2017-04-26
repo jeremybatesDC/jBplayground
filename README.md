@@ -25,6 +25,7 @@
 
 ### Style
 - **SASS**: *natch*
+- **Native CSS Grid** *included, with Flexbox fallback. Death to float grids!*
 - **PostCSS**:
    -  **Autoprefixer**: *to empathize with owners of older/non-updated devices*
    -  **CSS Nano**: *minifies, duh*
