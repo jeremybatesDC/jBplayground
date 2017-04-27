@@ -25,6 +25,7 @@
 
 ### Style
 - **SASS**: *natch*
+- **Native CSS Grid** *included, with Flexbox fallback. Avoid floated and/or hard-coded column width (no need for col-sm-3 anymore)!*
 - **PostCSS**:
    -  **Autoprefixer**: *to empathize with owners of older/non-updated devices*
    -  **CSS Nano**: *minifies, duh*

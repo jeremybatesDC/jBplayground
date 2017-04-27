@@ -3,8 +3,15 @@
 }}
 
 <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.1/clipboard.min.js"></script>
+<script>
+var clipboard = new Clipboard('.copyButton');
+</script>
 <style>
+
+article {
+	position: relative;
+}
 pre {
 	background: #ddd;
 	
@@ -14,7 +21,8 @@ pre {
 	line-height: 1.5;
 	width: 100%;
 	white-space: pre-wrap;
-	padding:0 0 1rem 0;
+	padding:0;
+	margin: 0;
 	border-top:2px solid rgba(0,0,0,.1);
 	border-bottom:2px solid rgba(0,0,0,.1);
 }
@@ -32,49 +40,44 @@ code {
 	position: relative;
 }
 
-.patternLib__codeBlock:before {
+/*.patternLib__codeBlock:before {
 	content: '<html>';
 	display: inline-block;
 	font-family: monospace;
 	font-size: 14px;
 	position: absolute;
 	top: 0;
-	right: 1rem;
+	left: 1rem;
 	padding: .25em .5em; 
 	background: #53B3E2;
 	color: #fff;
 
 }
+*/
+.copyButton {
+	position: absolute;
+	right: 0;
+	font-family: monospace;
+	font-size: 14px;
+	transform: translateY(-100%);
+	box-shadow: none;
+	background: #53B3E2;
+	color: #fff;
+	border:none;
+	padding: .5rem 1rem;
+
+
+}
+
+
 
 </style>
 
 <br>
-<br>
-
-<header>
-	<h1>{{title}}</h1>
-</header>
-
-<br>
-<br>
-<br>
 
 <article>
 
-<section id="accordionPattern" class="patternLib__section">
-	<h2>Accordion</h2>
-	{{> ../../components/accordion/accordion
-		accordHeadline1="Accordion Headline"
-		accordText1="Accordion Text"
-	}}
-</section>
-<section id="tabsPattern" class="patternLib__section">
-	<h2>Tabs</h2>
-	{{> ../../components/tabs/tabs
-		tabTitle1="testTabTitle"
-		tabText1="Test Tab Content"
-	}}
-</section>
+{{> ../../core/__patternLib/patternLib_compiledList.hbs }}
 
 </article>
 
@@ -84,11 +87,26 @@ function patternLibFunction(){
 	var nodeListOftheSections = document.querySelectorAll('.patternLib__section');
 	for(let i=0; i < nodeListOftheSections.length; i++){
 		let elementToAdd = document.createElement('div');
+		let thisID = nodeListOftheSections[i].id;
+
+		let thisDataClipboardTarget = `#${thisID}_codeBock`;
+		//<button class="copyButton" data-clipboard-action="copy" data-clipboard-target="#${theIDtoWrite}">Copy</button>
+
 		elementToAdd.classList.add('patternLib__codeBlock');
+		elementToAdd.id = `${thisID}_codeBock`;
+		let buttonToAdd = document.createElement('button');
+		buttonToAdd.classList.add('copyButton');
+		buttonToAdd.setAttribute('data-clipboard-action', 'copy');
+		buttonToAdd.setAttribute('data-clipboard-target', thisDataClipboardTarget);
+		buttonToAdd.innerHTML = `copy &lt;html&gt;`;
+
+
 		let cleanedInnerHTMLOfTheSection = nodeListOftheSections[i].innerHTML.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-		let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`
+		let wrappedCleanHTML = `<pre><code>${cleanedInnerHTMLOfTheSection}</code></pre>`;
 		elementToAdd.innerHTML = wrappedCleanHTML;
 		nodeListOftheSections[i].appendChild(elementToAdd);
+		nodeListOftheSections[i].appendChild(buttonToAdd);
+		//document.body.appendChild(buttonToAdd);
 	}
 }
 
