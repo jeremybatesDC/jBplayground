@@ -3,8 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProd = (process.env.NODE_ENV === 'production');
 const isDev = (process.env.NODE_ENV === 'development');
@@ -14,8 +12,8 @@ var config = {
   output: {
     path: __dirname + '/_static/'
     ,filename: 'js/app.js'
+    //,publicPath: __dirname + '/_static/'
   },
-  watch: true,
   module: {
     rules: [
       {test: /\.html$/,use: 'html-loader'},
@@ -25,10 +23,6 @@ var config = {
   },
   plugins: [
       new webpack.EnvironmentPlugin(['NODE_ENV']),
-      new ExtractTextPlugin({
-        filename: 'css/style.css'
-        ,allChunks: true
-      }),
       new CopyWebpackPlugin([{from: 'src/img', to: 'img'}]), //cleanest just to copy over images
       
       //PAGES: default is index so no need to specify, but it becomes some weird orphan if not explicit
@@ -56,13 +50,15 @@ var config = {
 };
 
 if (isDev) {
+  config.watch = true;
   config.devtool = 'eval';
   config.devServer = {
-      port: 8080 //even thought this is default, need to make explicit to access it
+      contentBase: '_static'
+      ,port: 8080
+      ,hot: true
   };
   config.plugins.push(
-    new LiveReloadPlugin({appendScriptTag: true})
-   ,new UglifyJSPlugin({})
+   new webpack.HotModuleReplacementPlugin()
   );
   config.module.rules.push(
     {
@@ -75,13 +71,12 @@ if (isDev) {
     },
     {
       test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader'
-            ,'postcss-loader?sourceMap=inline' //postcss config in own file
-            ,'sass-loader?sourceMap'
-          ]
-      })
+      use: [
+        'style-loader'
+        ,'css-loader'
+        ,'postcss-loader?sourceMap=inline' //postcss config in own file
+        ,'sass-loader?sourceMap'
+      ]
     }
   );
   let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}
@@ -91,8 +86,9 @@ if (isDev) {
 if (isProd) {
   config.devtool = 'source-map';
   config.plugins.push(
-    new UglifyJSPlugin({
-        mangle: true
+    new ExtractTextPlugin({
+        filename: 'css/style.css'
+        ,allChunks: true
       })
   );
   config.module.rules.push(
