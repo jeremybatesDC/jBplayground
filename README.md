@@ -12,8 +12,8 @@
 
 
 ### Build
-- **Webpack 2**: *for JS bundling, app structure & hotness*
-- **Webpack Dev Server**: *for seeing instant updates while developing*
+- **Webpack 2**: *for JS bundling & app structure, with minimal (if tricky) configuration*
+- **Webpack Dev Server**: *for instant style updates (no refresh!) & fast JS recompilations with auto browser refresh (refresh usually needed, so real need for HMR)*
 - **Production Script**: *for shipping svelte sites*
 - **Deploy Script** *under development*
 - **Yarn** *because cats*

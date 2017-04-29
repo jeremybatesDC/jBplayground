@@ -16,36 +16,31 @@ var config = {
   },
   module: {
     rules: [
-      {test: /\.html$/,use: 'html-loader'},
-      {test: /\.hbs$/,use: 'handlebars-loader'},
-      {test: /\.(jpe?g|png|gif|svg)$/i,use: 'file-loader'} //this allows project to load images from css
+      {test: /\.html$/,use: 'html-loader'}
+      ,{test: /\.hbs$/,use: 'handlebars-loader'}
+      ,{test: /\.(jpe?g|png|gif|svg)$/i,use: 'file-loader'} //this allows project to load images from css
+      ,{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader?presets[]=es2015'
+          ,'eslint-loader'
+        ]
+      } 
     ]
   },
   plugins: [
       new webpack.EnvironmentPlugin(['NODE_ENV']),
-      new CopyWebpackPlugin([{from: 'src/img', to: 'img'}]), //cleanest just to copy over images
+
+      //keep test images light weight...
+      new CopyWebpackPlugin([{from: 'src/img', to: 'img'}]),
       
       //PAGES: default is index so no need to specify, but it becomes some weird orphan if not explicit
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: 'src/views/pages/_rootProjectPage.hbs'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'homepage.html'
-        ,template: 'src/views/pages/homepage.hbs'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'compiled_1.html'
-        ,template: 'src/views/pages/test_page_1.hbs'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'compiled_2.html'
-        ,template: 'src/views/pages/test_page_2.hbs'
-      }),
-      new HtmlWebpackPlugin({
-        filename: '_patternLibrary_compiled.html'
-        ,template: 'src/views/pages/_patternLibrary.hbs'
-      })
+      new HtmlWebpackPlugin({filename: 'index.html', template: 'src/views/pages/_rootProjectPage.hbs'}),
+      new HtmlWebpackPlugin({filename: 'homepage.html', template: 'src/views/pages/homepage.hbs'}),
+      new HtmlWebpackPlugin({filename: 'compiled_1.html', template: 'src/views/pages/test_page_1.hbs'}),
+      new HtmlWebpackPlugin({filename: 'compiled_2.html', template: 'src/views/pages/test_page_2.hbs'}),
+      new HtmlWebpackPlugin({filename: '_patternLibrary_compiled.html', template: 'src/views/pages/_patternLibrary.hbs'})
    ]
 };
 
@@ -56,20 +51,12 @@ if (isDev) {
       contentBase: '_static'
       ,port: 8080
       ,hot: true
-      ,stats: 'minimal'
+      ,stats: 'normal'
   };
   config.plugins.push(
    new webpack.HotModuleReplacementPlugin()
   );
   config.module.rules.push(
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: [
-        'babel-loader?presets[]=es2015'
-        ,'eslint-loader'
-      ]
-    },
     {
       test: /\.scss$/,
       use: [
@@ -80,8 +67,8 @@ if (isDev) {
       ]
     }
   );
-  let IPaddy,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? IPaddy = details.IPaddy: undefined);}
-  console.log(`¯\_(ツ)_/¯ Site is available at this IP address: ${IPaddy}:${config.devServer.port} ¯\_(ツ)_/¯`);
+  let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}
+  console.log(`¯\_(ツ)_/¯ Site is available at this IP address: ${address}:${config.devServer.port} ¯\_(ツ)_/¯`);
 }
 
 if (isProd) {
@@ -93,11 +80,6 @@ if (isProd) {
       })
   );
   config.module.rules.push(
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: ['babel-loader?presets[]=es2015']
-    },
     {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({

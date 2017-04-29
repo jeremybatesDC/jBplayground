@@ -1,5 +1,10 @@
 {
+  "defaultSeverity": "warning",
   "rules": {
-    "declaration-no-important": true
+    "declaration-no-important": [
+    true, {
+    	"message": "hey bozo"
+    	}
+    ]
   }
 }
