@@ -56,6 +56,7 @@ if (isDev) {
       contentBase: '_static'
       ,port: 8080
       ,hot: true
+      ,stats: 'minimal'
   };
   config.plugins.push(
    new webpack.HotModuleReplacementPlugin()
@@ -79,8 +80,8 @@ if (isDev) {
       ]
     }
   );
-  let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}
-  console.log(`¯\_(ツ)_/¯ Site is available at this IP address: ${address}:${config.devServer.port} ¯\_(ツ)_/¯`);
+  let IPaddy,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? IPaddy = details.IPaddy: undefined);}
+  console.log(`¯\_(ツ)_/¯ Site is available at this IP address: ${IPaddy}:${config.devServer.port} ¯\_(ツ)_/¯`);
 }
 
 if (isProd) {
