@@ -19,8 +19,7 @@ var config = {
       {test: /\.html$/,use: 'html-loader'}
       ,{test: /\.hbs$/,use: 'handlebars-loader'}
       ,{test: /\.(jpe?g|png|gif|svg)$/i,use: 'file-loader'} //this allows project to load images from css
-      ,{
-        test: /\.js$/,
+      ,{test: /\.js$/,
         exclude: /node_modules/,
         use: [
           'babel-loader?presets[]=es2015'
@@ -31,10 +30,8 @@ var config = {
   },
   plugins: [
       new webpack.EnvironmentPlugin(['NODE_ENV']),
-
       //keep test images light weight...
       new CopyWebpackPlugin([{from: 'src/img', to: 'img'}]),
-      
       //PAGES: default is index so no need to specify, but it becomes some weird orphan if not explicit
       new HtmlWebpackPlugin({filename: 'index.html', template: 'src/views/pages/_rootProjectPage.hbs'}),
       new HtmlWebpackPlugin({filename: 'homepage.html', template: 'src/views/pages/homepage.hbs'}),
@@ -57,8 +54,7 @@ if (isDev) {
    new webpack.HotModuleReplacementPlugin()
   );
   config.module.rules.push(
-    {
-      test: /\.scss$/,
+    {test: /\.scss$/,
       use: [
         'style-loader'
         ,'css-loader'
@@ -68,7 +64,9 @@ if (isDev) {
     }
   );
   let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}
-  console.log(`¯\_(ツ)_/¯ Site is available at this IP address: ${address}:${config.devServer.port} ¯\_(ツ)_/¯`);
+  console.log(`
+External URL: ${address}:${config.devServer.port}
+`);
 }
 
 if (isProd) {
@@ -76,12 +74,11 @@ if (isProd) {
   config.plugins.push(
     new ExtractTextPlugin({
         filename: 'css/style.css'
-        ,allChunks: true
+        ,allChunks: true // must test if needed
       })
   );
   config.module.rules.push(
-    {
-      test: /\.scss$/,
+    {test: /\.scss$/,
       use: ExtractTextPlugin.extract({
           use: [
             'css-loader?sourceMap'
@@ -93,6 +90,7 @@ if (isProd) {
   );
 }
 
-console.log(`¯\_(ツ)_/¯ node environment is ${process.env.NODE_ENV} ¯\_(ツ)_/¯`);
+console.log(`Node environment: ${process.env.NODE_ENV}
+`);
 
 module.exports = config;
