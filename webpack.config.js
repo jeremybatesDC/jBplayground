@@ -29,15 +29,14 @@ var config = {
     ]
   },
   plugins: [
-      new webpack.EnvironmentPlugin(['NODE_ENV']),
-      //keep test images light weight...
-      new CopyWebpackPlugin([{from: 'src/img', to: 'img'}]),
+      new webpack.EnvironmentPlugin(['NODE_ENV'])
+      ,new CopyWebpackPlugin([{from: 'src/img', to: 'img'}])//keep test images light weight...
       //PAGES: default is index so no need to specify, but it becomes some weird orphan if not explicit
-      new HtmlWebpackPlugin({filename: 'index.html', template: 'src/views/pages/_rootProjectPage.hbs'}),
-      new HtmlWebpackPlugin({filename: 'homepage.html', template: 'src/views/pages/homepage.hbs'}),
-      new HtmlWebpackPlugin({filename: 'compiled_1.html', template: 'src/views/pages/test_page_1.hbs'}),
-      new HtmlWebpackPlugin({filename: 'compiled_2.html', template: 'src/views/pages/test_page_2.hbs'}),
-      new HtmlWebpackPlugin({filename: '_patternLibrary_compiled.html', template: 'src/views/pages/_patternLibrary.hbs'})
+      ,new HtmlWebpackPlugin({filename: 'index.html', template: 'src/views/pages/_rootProjectPage.hbs'})
+      ,new HtmlWebpackPlugin({filename: 'homepage.html', template: 'src/views/pages/homepage.hbs'})
+      ,new HtmlWebpackPlugin({filename: 'compiled_1.html', template: 'src/views/pages/test_page_1.hbs'})
+      ,new HtmlWebpackPlugin({filename: 'compiled_2.html', template: 'src/views/pages/test_page_2.hbs'})
+      ,new HtmlWebpackPlugin({filename: '_patternLibrary_compiled.html', template: 'src/views/pages/_patternLibrary.hbs'})
    ]
 };
 
@@ -63,8 +62,7 @@ if (isDev) {
       ]
     }
   );
-  let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}
-  console.log(`
+  let address,ifaces = require('os').networkInterfaces();for(let dev in ifaces){ifaces[dev].filter((details) => details.family === 'IPv4' && details.internal === false ? address = details.address: undefined);}console.log(`
 External URL: ${address}:${config.devServer.port}
 `);
 }
