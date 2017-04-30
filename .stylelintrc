@@ -3,7 +3,7 @@
   "rules": {
     "declaration-no-important": [
     true, {
-    	"message": "hey bozo"
+    	"message": "Don go ham 'n use important, broh"
     	}
     ]
   }
