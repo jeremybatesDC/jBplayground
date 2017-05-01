@@ -1,5 +1,1 @@
-** Don't approve your own pull requests **
-
-** Say NO to the Shrug **
-
-¯\_(ツ)_/¯
+last successful production build timestamp: Mon May 01 2017 13:23:00 GMT-0400 (EDT)
