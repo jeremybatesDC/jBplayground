@@ -1,1 +1,1 @@
-last successful production build timestamp: Mon May 01 2017 13:23:00 GMT-0400 (EDT)
+**Reviewers: Please apply Brightfind Coding Standards**: *[Brightfind Coding Standards](https://github.com/Brightfind/)*
