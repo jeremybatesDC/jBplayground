@@ -1,6 +1,4 @@
-
-**Don't approve yer own pull requests, yar**
-
+**Reviewers: Please apply Brightfind Coding Standards**:*[Brightfind Coding Standards](https://github.com/Brightfind/)*
 **Say NO to this guy:**
 
 ```
