@@ -86,6 +86,7 @@ if (isProd) {
       })
     }
   );
+  const successBuildTimeStampMessage = `successfully built at ${new Date()}`;fs.writeFile('PULL_REQUEST_TEMPLATE.md', successBuildTimeStampMessage);
 }
 
 console.log(`Node environment: ${process.env.NODE_ENV}
