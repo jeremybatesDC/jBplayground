@@ -29,11 +29,11 @@
 - **PostCSS**:
    -  **Autoprefixer**: *to empathize with owners of older/non-updated devices*
    -  **CSS Nano**: *minifies, duh*
-   -  **StyleLint** *lightly applied, with* Rick&Morty-*style warning messsages*
+   -  **StyleLint** *lightly applied, with* Rick & Morty-*style warning messsages*
 
 ### Templating
 - **WebpackHTMLPlugin**: *creates static pages*
-- **Handlebars**: *for templates & inludes (minimize frontend templating logic)*
+- **Handlebars**: *for templates & includes (minimize frontend templating logic)*
 - **Pattern Library** *via custom awesomeness*
 
 ### Images
