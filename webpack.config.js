@@ -86,7 +86,6 @@ if (isProd) {
       })
     }
   );
-  const successBuildTimeStampMessage = `last successful production build timestamp: ${new Date()}`;fs.writeFile('PULL_REQUEST_TEMPLATE.md', successBuildTimeStampMessage);
 }
 
 console.log(`Node environment: ${process.env.NODE_ENV}
