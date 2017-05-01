@@ -29,7 +29,7 @@
 - **PostCSS**:
    -  **Autoprefixer**: *to empathize with owners of older/non-updated devices*
    -  **CSS Nano**: *minifies, duh*
-   -  *Linting very lightly applied*
+   -  **StyleLint** *lightly applied, with* Rick&Morty-*style warning messsages*
 
 ### Templating
 - **WebpackHTMLPlugin**: *creates static pages*
@@ -63,3 +63,15 @@ yarn run dev
 ```
 yarn run prod
 ```
+
+---
+
+###Adding Pages
+
+- if frontend static pages are required and we cannot work directly in the backend for templating, **this is how to create static frontend pages**. Add a new instance of HTMLWebpackPlugin to the webpack.config file
+
+```
+,new HtmlWebpackPlugin({filename: '_pageName.html', template: 'src/views/pages/_pageName.hbs'})
+
+```
+
