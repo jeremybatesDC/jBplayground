@@ -4,9 +4,8 @@
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --progress --open",
     "prod": "NODE_ENV=production webpack -p --hide-modules",
-    "patternLib": "node _patternLib.js",
-    "projectPage": "node _projectPage.js",
-    "patternLibProjectPage": "node _patternLib.js & node _projectPage.js"
+    "patternLibProjectPage": "node _patternLib.js & node _projectPage.js",
+    "deploy":"node _deploy.js"
   },
   "keywords": [],
   "author": "Brightfind",
