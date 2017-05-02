@@ -9,12 +9,16 @@ const isDev = (process.env.NODE_ENV === 'development');
 
 const pagesJSON = require('./_pagesList.json');
 
+//const testPageToWatch = require('./src/views/pages/test_page_1.hbs');
+
+//if i require pages, webpack will watch them...
+
+
 var config = {
   entry: ['./_entry.js'],
   output: {
     path: __dirname + '/_static/'
     ,filename: 'js/app.js'
-    //,publicPath: __dirname + '/_static/'
   },
   module: {
     rules: [
@@ -59,7 +63,7 @@ if (isDev) {
     {test: /\.scss$/,
       use: [
         'style-loader'
-        ,'css-loader'
+        ,'css-loader?url=false'
         ,'postcss-loader?sourceMap=inline' //postcss config in own file
         ,'sass-loader?sourceMap'
       ]
@@ -82,7 +86,7 @@ if (isProd) {
     {test: /\.scss$/,
       use: ExtractTextPlugin.extract({
           use: [
-            'css-loader?sourceMap'
+            'css-loader?sourceMap&url=false'
             ,'postcss-loader?sourceMap' //postcss config in own file
             ,'sass-loader?sourceMap'
           ]
