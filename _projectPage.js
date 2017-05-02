@@ -1,17 +1,10 @@
 const fs = require('fs');
-
-var pagesList = [
-  {'viewFile': 'src/views/pages/_rootProjectPage.hbs','pageName': 'index.html'},
-  {'viewFile': 'src/views/pages/homepage.hbs','pageName': 'homepage.html'},
-  {'viewFile': 'src/views/pages/test_page_1.hbs','pageName': 'compiled_1.html'},
-  {'viewFile': 'src/views/pages/test_page_2.hbs','pageName': 'compiled_2.html'},
-  {'viewFile': 'src/views/pages/_patternLibrary.hbs','pageName': '_patternLibrary_compiled.html'}
-]//Move pagesList to own file. This list is used both to generate pages, and to auto-generate the project page with links to those pages
+const pagesJSON = require('./_pagesList.json');
 
 var theHTMLtoWrite = [];
 
-for(let i=0; i < pagesList.length; i++){
-	theHTMLtoWrite.push(`<p><a href="${pagesList[i].pageName}">${pagesList[i].pageName}</a></p>`);
+for(let i=0; i < pagesJSON.pages.length; i++){
+	theHTMLtoWrite.push(`<p><a href="${pagesJSON.pages[i].pageName}">${pagesJSON.pages[i].pageName}</a></p>`);
 }
 	
-fs.writeFile('src/views/projectPageListCOMPILED.hbs', theHTMLtoWrite);
+fs.writeFile('src/views/_compiledPartials/projectPageListCOMPILED.hbs', theHTMLtoWrite);

@@ -9,20 +9,6 @@ const isDev = (process.env.NODE_ENV === 'development');
 
 const pagesJSON = require('./_pagesList.json');
 
-console.log(pagesJSON);
-//const pagesFile = require('imports?pagesList!./_pagesList.js');
-//import pagesObject from pagesFile;
-//console.log(`letS take a look at the pagesFile length: ${pagesFile.pagesObject.length}`);
-
-
-var pagesObject = [
-  {'viewFile': 'src/views/pages/_rootProjectPage.hbs','pageName': 'index.html'},
-  {'viewFile': 'src/views/pages/homepage.hbs','pageName': 'homepage.html'},
-  {'viewFile': 'src/views/pages/test_page_1.hbs','pageName': 'compiled_1.html'},
-  {'viewFile': 'src/views/pages/test_page_2.hbs','pageName': 'compiled_2.html'},
-  {'viewFile': 'src/views/pages/_patternLibrary.hbs','pageName': '_patternLibrary_compiled.html'}
-]//Move pagesObject to own file. This list is used both to generate pages, and to auto-generate the project page with links to those pages
-
 var config = {
   entry: ['./_entry.js'],
   output: {
@@ -51,9 +37,9 @@ var config = {
 };
 
 //TAKE LIST OF PAGES AND CREATE THEM
-for(let i=0; i<pagesObject.length; i++){
+for(let i=0; i<pagesJSON.pages.length; i++){
   config.plugins.push(
-    new HtmlWebpackPlugin({filename: pagesObject[i].pageName, template: pagesObject[i].viewFile})
+    new HtmlWebpackPlugin({filename: pagesJSON.pages[i].pageName, template: pagesJSON.pages[i].viewFile})
   );
 }
 
