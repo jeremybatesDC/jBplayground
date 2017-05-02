@@ -13,7 +13,7 @@ var pagesList = [
   {'viewFile': 'src/views/pages/test_page_1.hbs','pageName': 'compiled_1.html'},
   {'viewFile': 'src/views/pages/test_page_2.hbs','pageName': 'compiled_2.html'},
   {'viewFile': 'src/views/pages/_patternLibrary.hbs','pageName': '_patternLibrary_compiled.html'}
-]//move this to own file
+]//Move pagesList to own file. This list is used both to generate pages, and to auto-generate the project page with links to those pages
 
 var config = {
   entry: ['./_entry.js'],
@@ -41,7 +41,8 @@ var config = {
       ,new CopyWebpackPlugin([{from: 'src/img', to: 'img'}])//keep test images light weight...      
    ]
 };
-//Pages Added Here
+
+//TAKE LIST OF PAGES AND CREATE THEM
 for(let i=0; i<pagesList.length; i++){
   config.plugins.push(
     new HtmlWebpackPlugin({filename: pagesList[i].pageName, template: pagesList[i].viewFile})
