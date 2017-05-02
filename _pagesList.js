@@ -1,8 +1,8 @@
-var pagesObject = [
-{
+var pagesList = [
+  {
 	'viewFile': 'src/views/pages/_rootProjectPage.hbs',
 	'pageName': 'index.html'
-},
+  },
   {
   	'viewFile': 'src/views/pages/homepage.hbs',
   	'pageName': 'homepage.html'
@@ -21,4 +21,4 @@ var pagesObject = [
   }
 ]
 
-module.exports = pagesObject;
+module.exports = pagesList;

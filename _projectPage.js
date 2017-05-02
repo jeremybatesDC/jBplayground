@@ -1,6 +1,4 @@
 const fs = require('fs');
-const pathToPages = 'src/views/pages';
-//const thePages = fs.readdirSync(pathToPages, 'utf8');
 
 var pagesList = [
   {'viewFile': 'src/views/pages/_rootProjectPage.hbs','pageName': 'index.html'},
