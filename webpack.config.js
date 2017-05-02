@@ -9,12 +9,16 @@ const isDev = (process.env.NODE_ENV === 'development');
 
 const pagesJSON = require('./_pagesList.json');
 
+//const testPageToWatch = require('./src/views/pages/test_page_1.hbs');
+
+//if i require pages, webpack will watch them...
+
+
 var config = {
   entry: ['./_entry.js'],
   output: {
     path: __dirname + '/_static/'
     ,filename: 'js/app.js'
-    //,publicPath: __dirname + '/_static/'
   },
   module: {
     rules: [

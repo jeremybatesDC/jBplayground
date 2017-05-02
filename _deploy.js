@@ -19,6 +19,9 @@ rsync.execute(function(error, code, cmd) {
 	if (error){
 		console.log(error)
 	}
-  console.log(`Deployed '_static/' to ${username}@${hostname}:${hostDestination}/`) 
-  console.log(`https://frontend.brightfind.com/${directory}/`)
+  console.log(`
+  	Deployed '_static/' to ${username}@${hostname}:${hostDestination}/`) 
+  console.log(`
+  	https://frontend.brightfind.com/${directory}/
+  	`)
 })
