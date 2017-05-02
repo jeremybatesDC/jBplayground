@@ -59,7 +59,7 @@ if (isDev) {
     {test: /\.scss$/,
       use: [
         'style-loader'
-        ,'css-loader'
+        ,'css-loader?url=false'
         ,'postcss-loader?sourceMap=inline' //postcss config in own file
         ,'sass-loader?sourceMap'
       ]
@@ -82,7 +82,7 @@ if (isProd) {
     {test: /\.scss$/,
       use: ExtractTextPlugin.extract({
           use: [
-            'css-loader?sourceMap'
+            'css-loader?sourceMap&url=false'
             ,'postcss-loader?sourceMap' //postcss config in own file
             ,'sass-loader?sourceMap'
           ]
