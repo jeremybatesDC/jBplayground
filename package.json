@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "html-webpack-harddisk-plugin": "^0.1.0",
     "postcss-reporter": "^3.0.0"
   }
 }

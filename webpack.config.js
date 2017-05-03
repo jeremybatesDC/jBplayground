@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProd = (process.env.NODE_ENV === 'production');
@@ -36,6 +37,7 @@ var config = {
   },
   plugins: [
       new webpack.EnvironmentPlugin(['NODE_ENV'])
+      ,new HtmlWebpackHarddiskPlugin()
       ,new CopyWebpackPlugin([{from: 'src/img', to: 'img'}])//keep test images light weight...      
    ]
 };
@@ -43,7 +45,7 @@ var config = {
 //TAKE LIST OF PAGES AND CREATE THEM
 for(let i=0; i<pagesJSON.pages.length; i++){
   config.plugins.push(
-    new HtmlWebpackPlugin({filename: pagesJSON.pages[i].pageName, template: pagesJSON.pages[i].viewFile})
+    new HtmlWebpackPlugin({filename: pagesJSON.pages[i].pageName, template: pagesJSON.pages[i].viewFile, alwaysWriteToDisk: true})//makes contents of static folder predictable
   );
 }
 
@@ -93,6 +95,8 @@ if (isProd) {
       })
     }
   );
+  fs.writeFile('PULL_REQUEST_TEMPLATE.md', `# Last Prod Build:
+    > ${new Date()}`);
 }
 
 console.log(`Node environment: ${process.env.NODE_ENV}
