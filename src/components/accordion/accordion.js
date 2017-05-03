@@ -2,7 +2,7 @@
 	'use strict';
 	window.onload = testFunction;
 	function testFunction(){
-		let testMessage = 'accordion 1146';
+		let testMessage = 'accordion 638';
 		console.log(testMessage);
 	}
 })();
