@@ -43,7 +43,7 @@
 ---
 
 
-## Installation:
+### Installation:
 
 - clone github repository
 - cd into directory
@@ -52,16 +52,30 @@
 yarn install
 ```
 
-## Develop
+## Usage
+
+### Create Project Page & Pattern Library
+
+```
+yarn run patternLibProjectPage
+```
+
+### Develop [FAST: pages only exist in memory -- no actual html file written]
 
 ```
 yarn run dev
 ```
 
-## Build for Prod
+### Build for Prod [outputs static folder]
 
 ```
 yarn run prod
+```
+
+### Prod + Deploy
+
+```
+yarn run deploy
 ```
 
 ---
