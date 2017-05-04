@@ -3,17 +3,13 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const reloadPlugin = require('reload-html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProd = (process.env.NODE_ENV === 'production');
 const isDev = (process.env.NODE_ENV === 'development');
 
 const pagesJSON = require('./_pagesList.json');
-
-//const testPageToWatch = require('./src/views/pages/test_page_1.hbs');
-
-//if i require pages, webpack will watch them...
-
 
 var config = {
   entry: ['./_entry.js'],
@@ -45,7 +41,7 @@ var config = {
 //TAKE LIST OF PAGES AND CREATE THEM
 for(let i=0; i<pagesJSON.pages.length; i++){
   config.plugins.push(
-    new HtmlWebpackPlugin({filename: pagesJSON.pages[i].pageName, template: pagesJSON.pages[i].viewFile, alwaysWriteToDisk: true})//makes contents of static folder predictable
+    new HtmlWebpackPlugin({filename: pagesJSON.pages[i].pageName, template: pagesJSON.pages[i].viewFile, alwaysWriteToDisk: false})//performance uber alles
   );
 }
 
@@ -60,6 +56,7 @@ if (isDev) {
   };
   config.plugins.push(
    new webpack.HotModuleReplacementPlugin()
+   ,new reloadPlugin()
   );
   config.module.rules.push(
     {test: /\.scss$/,
@@ -95,8 +92,8 @@ if (isProd) {
       })
     }
   );
-  fs.writeFile('PULL_REQUEST_TEMPLATE.md', `# Last Prod Build:
-    > ${new Date()}`);
+  fs.writeFile('PULL_REQUEST_TEMPLATE.md', `## Last Prod Build:
+    # ${new Date()}`);
 }
 
 console.log(`Node environment: ${process.env.NODE_ENV}
