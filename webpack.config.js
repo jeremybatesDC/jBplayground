@@ -92,8 +92,8 @@ if (isProd) {
       })
     }
   );
-  fs.writeFile('PULL_REQUEST_TEMPLATE.md', `# Last Prod Build:
-    > ${new Date()}`);
+  fs.writeFile('PULL_REQUEST_TEMPLATE.md', `## Last Prod Build:
+    # ${new Date()}`);
 }
 
 console.log(`Node environment: ${process.env.NODE_ENV}
