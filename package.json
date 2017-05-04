@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "html-webpack-harddisk-plugin": "^0.1.0",
-    "postcss-reporter": "^3.0.0"
+    "postcss-reporter": "^3.0.0",
+    "reload-html-webpack-plugin": "^0.1.2"
   }
 }
