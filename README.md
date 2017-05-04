@@ -52,7 +52,7 @@
 yarn install
 ```
 
-## Usage
+## Scripts
 
 ### Create Project Page & Pattern Library
 
@@ -80,7 +80,7 @@ yarn run deploy
 
 ---
 
-### Adding Pages
+## Adding Pages
 
 - Add handlebars file in the views/pages folder
 - Add entry to the pages object in _pagesList.json, which is in the root of the project
