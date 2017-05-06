@@ -78,6 +78,12 @@ yarn run prod
 yarn run deploy
 ```
 
+### Update Prototype Components
+
+```
+yarn run updatePrototypeComponents
+```
+
 ---
 
 ## Adding Pages
