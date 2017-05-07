@@ -5,9 +5,8 @@
 
 ## If code doesn't meet Brightfind standards, be sure to require changes before merging code. ##
 
-# [Brightfind Coding Standards](https://github.com/Brightfind/) #
+# [Brightfind Coding Standards](https://github.com/Brightfind/standards/) #
 
 ```
-Say No To
-¯\_(ツ)_/¯ 
+SAY NO TO ¯\_(ツ)_/¯ 
 ```
