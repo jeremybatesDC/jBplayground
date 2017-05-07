@@ -1,11 +1,11 @@
 
-###Authors: check your changed file list before submitting pull request
+### Authors: check your changed file list before submitting pull request ###
 
-###Reviewers make sure prod has been run
+### Reviewers make sure prod has been run ###
 
-##If code doesn't meet Brightfind standards, be sure to require changes before merging code.
+## If code doesn't meet Brightfind standards, be sure to require changes before merging code. ##
 
-#[Brightfind Coding Standards](https://github.com/Brightfind/)
+# [Brightfind Coding Standards](https://github.com/Brightfind/) #
 
 ```
 Say No To
