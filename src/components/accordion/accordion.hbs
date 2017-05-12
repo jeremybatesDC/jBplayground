@@ -11,10 +11,22 @@
         <div class="accordion__group">
             <section class="accordion__section">
                 <header class="accordion__section__header">
-                    <h5 class="accordion__section__headline"><span>Accordion Item<span></h5>
+                    <h5 class="accordion__section__headline">
+                        <span>
+                        {{#if accordHeadline1}}
+                        {{accordHeadline1}}
+                        {{else}}
+                         Accordion Default Headline
+                         {{/if}}
+                        <span>
+                     </h5>
                 </header>
                 <div class="accordion__section__content">
+                {{#if accordText1}}
+                {{accordText1}}
+                {{else}}
                   Praesent lacinia elementum interdum. Aliquam ac mauris at lectus venenatis euismod. Phasellus sed dictum urna, non tempor nulla. Proin sodales augue quis elit eleifend dictum. Nam aliquet ipsum eget felis rhoncus hendrerit. Praesent ut convallis nunc, ac sollicitudin lorem. In accumsan vel erat ac vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt urna erat, sed suscipit purus imperdiet eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  {{/if}}
                 </div>
             </section>
             <section class="accordion__section">
