@@ -19,4 +19,4 @@ function writeThisFileName(component){
 }
 
 var rejoinedObjectOfHTMLtoWrite = ObjectOfHTMLtoWrite.join('');
-fs.writeFile('src/views/_compiledPartials/patternLib_componentListCOMPILED.hbs', rejoinedObjectOfHTMLtoWrite);
+fs.writeFileSync('src/views/_compiledPartials/patternLib_componentListCOMPILED.hbs', rejoinedObjectOfHTMLtoWrite);
