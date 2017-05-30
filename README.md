@@ -76,7 +76,7 @@ yarn run updatePrototypeComponents
 ### Create Project Page & Pattern Library
 
 ```
-yarn run patternLibProjectPage
+yarn run build
 ```
 
 ### Develop [FAST: pages only exist in memory -- no actual html file written]
@@ -100,15 +100,18 @@ yarn run deploy
 ### Update Prototype Components
 
 ```
-yarn run updatePrototypeComponents
+yarn run components
 ```
 
 ---
 
 ## Adding Pages
 
-- Add handlebars file in the views/pages folder
-- Add entry to the pages object in _pagesList.json, which is in the root of the project
+1. Add handlebars file in the views/pages folder
+2. Add entry to the pages object in _pagesList.json, which is in the root of the project
+3. run build task 
+```
+Yarn run build
 
 ```
 

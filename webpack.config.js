@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path');
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const reloadPlugin = require('reload-html-webpack-plugin');
