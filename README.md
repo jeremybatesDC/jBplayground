@@ -66,7 +66,7 @@ src/components/
 **If, mid-project you wish to refresh the prototype components folder**, run
 
 ```
-yarn run updatePrototypeComponents
+yarn run components
 ```
 
 ---
@@ -109,9 +109,9 @@ yarn run components
 
 1. Add handlebars file in the views/pages folder
 2. Add entry to the pages object in _pagesList.json, which is in the root of the project
-3. run build task 
+3. run autoPages task 
 ```
-Yarn run build
+Yarn run autoPages
 
 ```
 
