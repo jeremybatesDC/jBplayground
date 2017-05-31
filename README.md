@@ -76,7 +76,7 @@ yarn run updatePrototypeComponents
 ### Create Project Page & Pattern Library
 
 ```
-yarn run build
+yarn run autoPages
 ```
 
 ### Develop [FAST: pages only exist in memory -- no actual html file written]

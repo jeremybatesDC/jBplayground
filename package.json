@@ -2,7 +2,7 @@
   "name": "Brightpack",
   "main": "app.js",
   "scripts": {
-    "build": "node _patternLib.js & node _projectPage.js",
+    "autoPages": "node _patternLib.js & node _projectPage.js",
     "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --progress --open",
     "prod": "NODE_ENV=production webpack -p --hide-modules",
     "deploy": "NODE_ENV=production webpack -p --hide-modules && node _deploy.js",
