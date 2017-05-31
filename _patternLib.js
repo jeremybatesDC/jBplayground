@@ -3,7 +3,7 @@ const pathToComponents = 'src/components/';
 var componentsList = fs.readdirSync(pathToComponents, 'utf8');
 var ObjectOfHTMLtoWrite = [];
 
-var arrayOfThingsToOmit = ['.DS_Store', '_bfComponents', 'navMain', 'footer' ];
+const arrayOfThingsToOmit = ['.DS_Store', '_bfComponents', 'navMain', 'footer' ];
 
 componentsList.map(function(component){
 	if(arrayOfThingsToOmit.indexOf(component) < 0){

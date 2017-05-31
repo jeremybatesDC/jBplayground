@@ -1,6 +1,26 @@
 {{#> ../templates/generic_page_template
-	title="Test Page 3"
+	title="Page 3"
+	subTitle="This Subtitle Rocks"
+	imageName="typeB_768x432.jpg"
 }}
-		
+
+<h2>{{subTitle}}!</h2>
+	
+
+{
+  people: [
+    "Vince Tardy",
+    "Sandra Dumas",
+    "Jeremy Bates",
+    "Pete Grillot"
+  ]
+}
+
+<ul class="people_list">
+  {{#each people}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+
 
 {{/../templates/generic_page_template}}
