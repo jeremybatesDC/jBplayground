@@ -36,6 +36,32 @@
 - **Handlebars**: *for templates & includes (minimize frontend templating logic)*
 - **Pattern Library** *via custom awesomeness*
 
+Pass handlebars contexts (variables) to pages:
+
+```
+{{#> ../templates/generic_page_template
+	title="Page Two"
+	buttonText="Learn More"
+	imageName="typeB_768x432.jpg"
+}}
+
+{{/../templates/generic_page_template}}
+
+```
+
+Pass handlebars contexts (variables) to components
+
+```
+
+{{> ../../components/accordion/accordion
+	accordHeadline1="Accord 1 Headline"
+	accordText1="Accord 1 Text"
+}}
+
+```
+
+
+
 ### Images
 - **Lazyloading** *baked-in w/ B-LAZY*
 
