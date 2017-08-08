@@ -9,7 +9,6 @@ env:
   node: true
 
 rules:
-  max-len: [2, 80, 4]
   brace-style: [2, "stroustrup"]
   computed-property-spacing: [2, "never"]
   dot-location: [2, "property"]

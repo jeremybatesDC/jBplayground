@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	{{!-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 	<meta name="theme-color" content="#5786C7">
 	<title>{{title}}</title>
@@ -23,32 +23,24 @@
 <div class="grid__wrapper--outermost">
 
 	<header>
-		<h1>{{title}}!!</h1>
+		<h1>{{title}}</h1>
 	</header>
 		
-	<!-- page content here-->
-	<aside class="aside__left">
-		Optional Aside Left 
-	</aside>
 	<main id="main">
 		{{> @partial-block }}
 	</main>
-	<aside class="aside__right">
-		Optional Aside Right
-	</aside>
 
-	<!--end page content -->
-
-	{{> ../../components/footer/footer}}
-
+	{{!-- <aside class="aside__left">Optional Aside Left </aside> --}}
+	{{!-- <aside class="aside__right">Optional Aside Right</aside> --}}
+	{{!-- <footer>{{> ../../components/footer/footer}}</footer> --}}
 
 </div>
 <!--list of vendor scripts can go in own file, but is somewhat more declarative here-->
 <!--NO jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
 <!-- Vue.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
-
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+ --}}
 </body>
 
 </html>
